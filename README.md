@@ -24,19 +24,22 @@ Os arquivos estão organizados para refletir o fluxo de trabalho de Ciência de 
 | `plots/` | Visualizações geradas para o relatório e apresentação. |
 | `data_cleaning.ipynb` | **Pré-processamento:** Limpeza, padronização e normalização dos dados. |
 | `eda.ipynb` | **EDA:** Análise Exploratória para entender distribuições e correlações iniciais. |
-| `model.ipynb` | **Modelagem (Principal):** Implementação de algoritmos de clusterização (ex: Gaussian Mixture Models). |
-| `non_linear_model.ipynb` | **Modelagem (Comparativa):** Testes com abordagens não-lineares ou algoritmos alternativos. |
-| `gmm_resumo_*.md` | **Resultados:** Resumos interpretativos dos clusters gerados (6 e 10 grupos). |
+| `k_means.ipynb` | **Modelagem:** Implementação, plot e Interpretação dos Resultados do K-Means + PCA. |
+| `gmm.ipynb` | **Modelagem:** Treinamento, plot e interpretação do modelo GMM(Gaussian Mixture Models) + UMAP. |
 | `helpers.py` | Funções auxiliares e utilitários de código. |
 
 ## 🛠️ Metodologia e Tecnologias
 
-Utilizamos **Python** e as bibliotecas padrão de Data Science (`pandas`, `numpy`, `matplotlib`, `seaborn`, `scikit-learn`).
+Utilizamos **Python** e as bibliotecas padrão de Data Science (`pandas`, `numpy`, `matplotlib`, `seaborn`, `scikit-learn`, `umap-learn`).
 
 ### Algoritmos Aplicados
-1.  **Gaussian Mixture Models (GMM):** Utilizado para modelagem probabilística dos clusters.
-2.  **[Inserir Nome do 2º Algoritmo]:** (Ex: K-Means, DBSCAN ou Hierarchical Clustering) utilizado para comparação.
-3.  **[Opcional - Redução de Dimensionalidade]:** (Ex: PCA, t-SNE) utilizado para visualização dos grupos.
+1.  **Modelagem e Clusterização:**
+    * **Gaussian Mixture Models (GMM):** Modelo principal, escolhido pela flexibilidade em capturar clusters de formatos variados e probabilidades de pertencimento.
+    * **K-Means:** Utilizado como método comparativo (baseline) para validar a consistência dos agrupamentos e definir centróides rígidos.
+
+2.  **Redução de Dimensionalidade e Visualização:**
+    * **PCA (Principal Component Analysis):** Aplicado para reduzir a dimensionalidade preservando a variância global dos dados.
+    * **UMAP (Uniform Manifold Approximation and Projection):** Utilizado para projeção não-linear em 2D/3D, facilitando a visualização da separação entre os clusters.
 
 ## 🚀 Instalação e Execução
 
@@ -50,7 +53,7 @@ Para reproduzir as análises localmente:
 
 2.  Instale as dependências necessárias:
     ```bash
-    pip install pandas numpy matplotlib seaborn scikit-learn jupyter
+    pip install -r requirements.txt
     ```
 
 3.  Execute o Jupyter Notebook e abra os arquivos na ordem sugerida (Cleaning -> EDA -> Models):
