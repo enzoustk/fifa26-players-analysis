@@ -76,7 +76,7 @@ The algorithm successfully isolated goalkeepers into their own distinct cluster 
 
 def plot_kmeans():
 
-    df = pd.read_parquet('data/kmeans_df.parquet')
+    df = pd.read_parquet('src/data/kmeans_df.parquet')
 
 
     # Plot

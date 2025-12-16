@@ -3,7 +3,7 @@ import pandas as pd
 import streamlit as st
 from streamlit_features.data import data_cleaning, eda
 
-df = pd.read_pickle('data/df_cleaned.pkl')
+df = pd.read_pickle('src/data/df_cleaned.pkl')
 
 st.title("FIFA 26 Player Analysis")
 

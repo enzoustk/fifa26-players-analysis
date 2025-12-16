@@ -6,7 +6,7 @@ import plotly.express as px
 
 
 umap_code = """
-df = pd.read_pickle('data/df_cleaned.pkl')
+df = pd.read_pickle('src/data/df_cleaned.pkl')
 numeric_df = df.select_dtypes(include=[np.number])
 numeric_df = numeric_df.drop(['rank', 'ovr'], axis=1, errors='ignore')
 
@@ -74,7 +74,7 @@ gmm_report = """
 """
 
 def plot_umap():
-    df = pd.read_parquet('data/df_umap.parquet')
+    df = pd.read_parquet('src/data/df_umap.parquet')
     fig = px.scatter_3d(
         df,
         x='UMAP1', y='UMAP2', z='UMAP3',
@@ -118,7 +118,7 @@ def plot_umap():
 
 
 def plot_gmm():
-    df = pd.read_parquet('data/gmm_df.parquet')
+    df = pd.read_parquet('src/data/gmm_df.parquet')
     fig = px.scatter_3d(
         df,
         x='UMAP1', y='UMAP2', z='UMAP3',

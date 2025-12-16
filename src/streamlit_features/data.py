@@ -13,7 +13,7 @@ def data_cleaning(df: pd.DataFrame):
     st.subheader('Data Cleaning, Transformation and Feature Engineering')
 
     with st.echo():
-        df = pd.read_csv('data/EAFC26-Men_raw.csv')
+        df = pd.read_csv('src/data/EAFC26-Men_raw.csv')
         df.head(10)
     st.dataframe(data=df.head(10))
 
@@ -140,10 +140,10 @@ def data_cleaning(df: pd.DataFrame):
 
     with st.echo():
         # PKL para salvar os dados
-        df.to_pickle('data/df_cleaned.pkl')
+        df.to_pickle('src/data/df_cleaned.pkl')
 
         # CSV para quem quiser ler rapidamente
-        df.to_csv('data/df_cleaned.csv', index=False)
+        df.to_csv('src/data/df_cleaned.csv', index=False)
 
 def eda(df: pd.DataFrame):
     try:
